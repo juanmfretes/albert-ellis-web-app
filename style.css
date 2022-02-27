@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* FIX
+3- Estilizar las fuentes de todos los textos
+4- buscar mejores colores para los text inputs.
+6- Ver por qué no funciona el "focus"
+*/
+
+/*
+COLORES: (verificar cuando ya no haya filtro flux)
+Fondo: rgb(187, 80, 0)
+Items: rgb(160, 160, 160)
+Boxes: rgb(58, 78, 103)
+Icons y títulos: rgb(32, 19, 53)
+Texto: rgb(39, 39, 39)
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* *:focus {
+  outline: none;
+  box-shadow: inset 0, 0, 0, 10px, rgb(32, 19, 53);
+} */
+
+/* GENERAL */
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+  min-height: 100%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 0.5vw 0.5vw 0;
+  min-height: calc(100vh - 11px);
+  background-color: rgb(187, 80, 0);
+}
+
+h1 {
+  margin-bottom: 1.6rem;
+  font-weight: 700;
+  font-size: 2rem;
+  color: rgb(32, 19, 53);
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 49.5vw 49.5vw;
+}
+
+.left-side,
+.right-side {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: rgb(187, 80, 0);
+}
+
+form {
+  width: 100%;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+}
+
+.a-section,
+.concequences-section {
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.a-input,
+.negative-emotions-input,
+.negative-behavior-input {
+  height: 2.8rem;
+  border: none;
+  border-radius: 4px;
+  padding: 0.2rem 0.3rem;
+  background-color: rgb(160, 160, 160);
+  background-color: rgb(58, 78, 103);
+}
+
+.a-input::placeholder,
+.negative-emotions-input::placeholder,
+.negative-behavior-input::placeholder {
+  font-family: inherit;
+  font-size: 1.1rem;
+  color: rgb(39, 39, 39);
+  color: rgb(160, 160, 160);
+}
+
+.inputs {
+  display: grid;
+  grid-template-columns: 49% 49%;
+  justify-items: center;
+  justify-content: space-between;
+  background-color: rgb(187, 80, 0);
+}
+
+.box {
+  height: 70vh;
+  border-radius: 6px;
+  overflow: scroll;
+  margin-bottom: 1.6rem;
+  background-color: rgb(58, 78, 103);
+  /* border: 1px solid rgb(39, 39, 39); */
+}
+
+.box-item {
+  padding: 6%;
+  font-size: 1.4rem;
+  background-color: rgb(160, 160, 160);
+  color: rgb(39, 39, 39);
+  border-bottom: 2px solid rgb(39, 39, 39);
+}
+
+.bottom-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* ICONS */
+.info-icon,
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  stroke: rgb(39, 39, 39);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+/* -------------------- LEFT SIDE -------------------- */
+
+/* ACONTECIMIENTO ACTIVADOR */
+.a-section {
+  margin-bottom: 5rem;
+}
+
+.a-input {
+  width: 92%;
+}
+
+/* -------------------- RIGHT SIDE -------------------- */
+
+/* CONCECUENCIAS (EMOCIONES Y CONDUCTAS) */
+.concequences-section {
+  margin-bottom: 1.57rem;
+}
+
+.negative-inputs-box {
+  width: 92%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5px;
+}
+
+.negative-emotions-input,
+.negative-behavior-input {
+  text-align: left;
+}
+
+.negative-emotions-input {
+  margin-bottom: 1rem;
+}
+
+/* EFECTO */
+.box--effects {
+  padding: 2rem 1rem;
+}
+
+label {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+textarea {
+  height: 30%;
+  width: 90%;
+  background-color: rgb(160, 160, 160);
+  border-radius: 4px;
+  /* color: inherit; */
+  color: rgb(39, 39, 39);
+}
+
+.new-emotions-input {
+  margin-bottom: 1.8rem;
+}
+
+.info-icon--e {
+  margin-right: 2.8rem;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+  background-color: rgb(187, 80, 0);
+  height: 11px;
+}
+
+footer p {
+  margin-left: 2.7rem;
+  color: rgb(32, 19, 53);
+  font-weight: 600;
+}
