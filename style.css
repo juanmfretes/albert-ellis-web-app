@@ -124,7 +124,10 @@ form {
 
 .box-item {
   padding: 6%;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+  text-align: left;
+  font-weight: 500;
+  line-height: 1.3;
   background-color: rgb(160, 160, 160);
   color: rgb(39, 39, 39);
   border-bottom: 2px solid rgb(39, 39, 39);
@@ -157,6 +160,14 @@ button {
 
 .a-input {
   width: 92%;
+}
+
+/* CREENCIAS IRRACIONALES */
+.box-item--cri,
+.box-item--question,
+.box-item--answer {
+  font-size: 1.2rem;
+  line-height: 1.3;
 }
 
 /* -------------------- RIGHT SIDE -------------------- */
@@ -198,8 +209,13 @@ textarea {
   width: 90%;
   background-color: rgb(160, 160, 160);
   border-radius: 4px;
-  /* color: inherit; */
+  padding: 0.5rem;
   color: rgb(39, 39, 39);
+}
+
+textarea::placeholder {
+  font-family: inherit;
+  color: #505050;
 }
 
 .new-emotions-input {
