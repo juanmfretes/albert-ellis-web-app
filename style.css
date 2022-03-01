@@ -151,6 +151,11 @@ button {
   background-color: transparent;
 }
 
+button .btn-icon:hover,
+.info-icon:hover {
+  cursor: pointer;
+}
+
 /* -------------------- LEFT SIDE -------------------- */
 
 /* ACONTECIMIENTO ACTIVADOR */
@@ -204,7 +209,8 @@ label {
   margin-bottom: 0.5rem;
 }
 
-textarea {
+.new-emotions-input,
+.new-behavior-input {
   height: 30%;
   width: 90%;
   background-color: rgb(160, 160, 160);
@@ -236,4 +242,59 @@ footer p {
   margin-left: 2.7rem;
   color: rgb(32, 19, 53);
   font-weight: 600;
+}
+
+/* -------------------- MODAL -------------------- */
+.modal-container {
+  position: absolute;
+  padding: 1rem 1rem 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(160, 160, 160);
+  border: 2px solid rgb(39, 39, 39);
+  border-radius: 6px;
+  /* opacity: 40%; */
+}
+
+.modal-input {
+  width: 25rem;
+  height: 12rem;
+  padding: 0.5rem;
+  background-color: rgb(58, 78, 103);
+  color: rgb(160, 160, 160);
+}
+
+.modal-input::placeholder {
+  color: rgb(160, 160, 160);
+}
+
+.modal-btn {
+  align-self: flex-end;
+  padding: 0.2rem 0 0;
+}
+
+/* .modal-btn .btn-icon {
+  stroke: red;
+} */
+
+.modal-container--cri {
+  top: 73.3%;
+  left: 0.92%;
+}
+
+.modal-container--d {
+  top: 73.3%;
+  left: 25.1%;
+}
+
+.modal-container--crr {
+  top: 73.3%;
+  left: 50.42%;
+}
+
+/* -------------------- HIDDEN CLASS -------------------- */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
