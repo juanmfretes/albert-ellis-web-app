@@ -8,8 +8,9 @@ FALTA:
 [YA]5. Crear función para mostrar el contenido de cada cri object
 6. Agregar un "autofocus" a los textareas de los Modal Windows
 7. Aplicar Event Delegation al código actual [crear una segunda versión con este método]
-8. Agregar función cargar Pregunta /Respuesta 
-9. Agregar función cargar Creencia racional
+[YA] 8. Agregar función cargar Pregunta /Respuesta 
+[YA]9. Agregar función cargar Creencia racional
+10. Estilizar los textos de los inputs
 */
 
 // DOM Elements
@@ -40,11 +41,9 @@ const crrBox = document.querySelector(".box--rational-beliefs");
 /* ================== VARIABLES ================== */
 let cri = -1; // cuenta la cantidad de cri objs
 const criArray = []; // Contiene todos los Cri Objs
-let currCriIndex = 0; // Contiene el Cri sobre el que se está trabajando (OBS: usar un data-cri="#")
+let currCriIndex = 0; // Contiene el Cri sobre el que se está trabajando (OBS: usar un data-cri="#" en la otra versión con Event Delegation)
 
 /* ================== FUNCTIONS ================== */
-
-// --------------- ADD EVENT LISTENERS TO EACH CRI ---------------
 
 // -------------------- UPDATE UI --------------------
 const updateUI = function (index) {
@@ -66,7 +65,6 @@ const updateUI = function (index) {
   }
 
   const focusCri = document.querySelector(`.box-item-cri--${index + 1}`);
-  console.log(focusCri);
   focusCri.style.setProperty("background-color", "rgb(110, 110, 110)");
 
   // Update D box
@@ -89,7 +87,7 @@ const updateUI = function (index) {
   crrBox.append(currCrr);
 };
 
-// -------------------- ADD CRI OBJ --------------------
+// -------------------- ADD NEW CRI (OBJ) --------------------
 const addCri = function (newCri) {
   cri++; //count new cri obj
   //Create Obj
@@ -99,11 +97,21 @@ const addCri = function (newCri) {
     d: ["hola", "que", "tal", "mundo"], //par: pregunta, impar: respuesta
     crr: "Así no es",
   };
-
   criArray.push(criObj);
-  console.log(criObj);
 
   updateUI(cri);
+};
+
+// -------------------- ADD NEW QUESTION/ANSWER --------------------
+const addD = function (newQA) {
+  criArray[currCriIndex].d.push(newQA);
+  updateUI(currCriIndex);
+};
+
+// -------------------- ADD NEW CRR --------------------
+const addCrr = function (newCrr) {
+  criArray[currCriIndex].crr = newCrr;
+  updateUI(currCriIndex);
 };
 
 // ================== EVENT LISTENERS ==================
@@ -156,6 +164,14 @@ btnCloseModalD.addEventListener("click", function (event) {
   modalD.classList.toggle("hidden");
 });
 
+// ADD NEW QUESTION/ANSWER
+btnAddD.addEventListener("click", function (event) {
+  event.preventDefault();
+  const newQA = textAreaD.value;
+  addD(newQA);
+  modalD.classList.toggle("hidden");
+});
+
 /* --------------- CRR ---------------*/
 // OPEN MODAL
 btnOpenModalCrr.addEventListener("click", function (event) {
@@ -167,5 +183,13 @@ btnOpenModalCrr.addEventListener("click", function (event) {
 // CLOSE MODAL
 btnCloseModalCrr.addEventListener("click", function (event) {
   event.preventDefault();
+  modalCrr.classList.toggle("hidden");
+});
+
+// ADD NEW QUESTION/ANSWER
+btnAddCrr.addEventListener("click", function (event) {
+  event.preventDefault();
+  const newCrr = textAreaCrr.value;
+  addCrr(newCrr);
   modalCrr.classList.toggle("hidden");
 });
