@@ -73,6 +73,9 @@ form {
   text-align: center;
 }
 
+.input {
+}
+
 .container {
   width: 100%;
 }
@@ -85,6 +88,7 @@ form {
   align-items: center;
 }
 
+/* input text boxes */
 .a-input,
 .negative-emotions-input,
 .negative-behavior-input {
@@ -92,8 +96,11 @@ form {
   border: none;
   border-radius: 4px;
   padding: 0.2rem 0.3rem;
-  background-color: rgb(160, 160, 160);
   background-color: rgb(58, 78, 103);
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgb(32, 19, 53);
 }
 
 .a-input::placeholder,
@@ -244,7 +251,7 @@ footer p {
   font-weight: 600;
 }
 
-/* -------------------- MODAL -------------------- */
+/* -------------------- ADD ITEMS MODAL -------------------- */
 .modal-container {
   position: absolute;
   padding: 1rem 1rem 0;
@@ -278,10 +285,6 @@ footer p {
   padding: 0.2rem 0 0;
 }
 
-/* .modal-btn .btn-icon {
-  stroke: red;
-} */
-
 .modal-container--cri {
   top: 73.3%;
   left: 0.92%;
@@ -295,6 +298,57 @@ footer p {
 .modal-container--crr {
   top: 73.3%;
   left: 50.42%;
+}
+
+/* -------------------- SHOW INFO MODALS -------------------- */
+.modal-info {
+  position: absolute;
+  padding: 1rem;
+  background-color: rgb(160, 160, 160);
+  border: 2px solid rgb(39, 39, 39);
+  border-radius: 6px;
+  max-width: 31.7rem;
+
+  color: rgb(32, 19, 53);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  font-weight: 600;
+  list-style: square inside;
+  text-align: left;
+}
+
+.modal-info--a {
+  max-width: 48rem;
+  top: 7.05%;
+  left: 13%;
+}
+
+.modal-info--cri {
+  bottom: 10%;
+  /* top: 8.15%;
+  left: 13.1%; */
+}
+
+.modal-info--d {
+  bottom: 10%;
+  /* top: 8.15%;
+  left: 13.1%; */
+}
+
+.modal-info--c {
+  top: 9.2%;
+  right: 2.65%;
+}
+
+.modal-info--crr {
+  bottom: 10%;
+  /* transform: translateX(0.16%); */
+  /* left: 13.1%; */
+}
+
+.modal-info--e {
+  bottom: 10%;
+  right: 1.58%;
 }
 
 /* -------------------- HIDDEN CLASS -------------------- */

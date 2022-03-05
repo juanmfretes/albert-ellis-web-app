@@ -4,13 +4,15 @@ FALTA:
 [YA] 1. Crear todos los DOM ELements
 [YA] 2. Mostrar modal windows al presionar el botón "+"
 [YA] 3. Ocultar modal windows al presionar el botón "v"
-[YA]4. Crear función para generar el cri object
-[YA]5. Crear función para mostrar el contenido de cada cri object
+[YA] 4. Crear función para generar el cri object
+[YA] 5. Crear función para mostrar el contenido de cada cri object
 6. Agregar un "autofocus" a los textareas de los Modal Windows
 7. Aplicar Event Delegation al código actual [crear una segunda versión con este método]
 [YA] 8. Agregar función cargar Pregunta /Respuesta 
-[YA]9. Agregar función cargar Creencia racional
-10. Estilizar los textos de los inputs
+[YA] 9. Agregar función cargar Creencia racional
+[YA] 10. Estilizar los textos de los inputs
+[YA] 11. Diseñar los "Info Modals"
+[YA] 12. Mostrar ayudas al hacer hover a un "info-icon"
 */
 
 // DOM Elements
@@ -37,6 +39,8 @@ const textAreaCrr = document.querySelector(".modal-input--crr");
 const criBox = document.querySelector(".box--irrational-beliefs");
 const dBox = document.querySelector(".box--question-answer");
 const crrBox = document.querySelector(".box--rational-beliefs");
+
+const mainParentInfo = document.querySelector(".main-container");
 
 /* ================== VARIABLES ================== */
 let cri = -1; // cuenta la cantidad de cri objs
@@ -81,6 +85,7 @@ const updateUI = function (index) {
 
   // Update Crr box
   crrBox.innerHTML = "";
+  if (criArray[currCriIndex].crr === "") return;
   const currCrr = document.createElement("div");
   currCrr.textContent = criArray[currCriIndex].crr;
   currCrr.classList.add("box-item", "box-item--crr");
@@ -94,8 +99,8 @@ const addCri = function (newCri) {
   const criObj = {
     num: cri,
     text: newCri,
-    d: ["hola", "que", "tal", "mundo"], //par: pregunta, impar: respuesta
-    crr: "Así no es",
+    d: [], //par: pregunta, impar: respuesta
+    crr: "",
   };
   criArray.push(criObj);
 
@@ -133,20 +138,16 @@ btnCloseModalCri.addEventListener("click", function (event) {
 // ADD NEW CRI
 btnAddCri.addEventListener("click", function (event) {
   event.preventDefault();
-  const criText = textAreaCri.value;
-  addCri(criText);
+  const newCri = textAreaCri.value;
+  if (newCri !== "") addCri(newCri);
   modalCri.classList.toggle("hidden");
 });
 
 // SELECT EACH CRI OBJ TO SHOW DATA
 criBox.addEventListener("click", function (event) {
   const clicked = event.target.closest(".box-item--cri");
-
   if (!clicked) return;
-
   const criNum = +clicked.textContent[0] - 1;
-  console.log(criNum);
-
   updateUI(criNum);
 });
 
@@ -168,7 +169,7 @@ btnCloseModalD.addEventListener("click", function (event) {
 btnAddD.addEventListener("click", function (event) {
   event.preventDefault();
   const newQA = textAreaD.value;
-  addD(newQA);
+  if (newQA !== "") addD(newQA);
   modalD.classList.toggle("hidden");
 });
 
@@ -186,10 +187,29 @@ btnCloseModalCrr.addEventListener("click", function (event) {
   modalCrr.classList.toggle("hidden");
 });
 
-// ADD NEW QUESTION/ANSWER
+// ADD NEW CRR
 btnAddCrr.addEventListener("click", function (event) {
   event.preventDefault();
   const newCrr = textAreaCrr.value;
-  addCrr(newCrr);
+  if (newCrr !== "") addCrr(newCrr);
   modalCrr.classList.toggle("hidden");
+});
+
+/* --------------- SHOW INFO WHILE HOVER ---------------*/
+const transformHover = function (info) {
+  const infoModal = document.querySelector(`.modal-info--${info}`);
+  infoModal.classList.toggle("hidden");
+};
+
+mainParentInfo.addEventListener("mouseover", function (event) {
+  // event.preventDefault();
+  const hovered = event.target;
+  if (!hovered.classList.contains("info-icon")) return;
+  transformHover(hovered.dataset.infoType);
+});
+
+mainParentInfo.addEventListener("mouseout", function (event) {
+  const hovered = event.target;
+  if (!hovered.classList.contains("info-icon")) return;
+  transformHover(hovered.dataset.infoType);
 });

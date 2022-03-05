@@ -23,6 +23,7 @@
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="info-icon"
+                data-info-type="a"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -36,6 +37,24 @@
               </svg>
             </div>
 
+            <!-- INFO MODAL WINDOW PARA EL A -->
+            <div class="modal-info modal-info--a hidden">
+              <ul>
+                <li>
+                  Resumir brevemente la situación que nos perturba (¿Qué vería
+                  una cámara?)
+                </li>
+                <li>
+                  Una A puede ser <em>interna</em> o <em>externa</em>,
+                  <em>real</em> o <em>imaginada</em>
+                </li>
+                <li>
+                  Una A puede ser un acontecimiento <em>pasado</em>,
+                  <em>presente</em> o <em>futuro</em>
+                </li>
+              </ul>
+            </div>
+
             <!-- CAJAS DEL LADO IZQUIERDO -->
             <div class="inputs inputs-left-side">
               <!-- CREENCIAS IRRACIONALES -->
@@ -43,13 +62,14 @@
                 <h1>Cri (Creencias irracionales)</h1>
                 <div class="box box--irrational-beliefs">
                   <div class="box-item box-item--cri">
-                    1-lka alsjfd ñlajdfl añlksdjflña ñsdf asñldfjasd ñdfad asdfasdf ñaksdfasd asdlfasdfñ asd adf aadf ñaldfad ñasdf adfa asdfjadf asdfa
+                    Añada sus creencias irracionales debido al acontecimiento
                   </div>
                 </div>
                 <div class="bottom-box">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="info-icon info-icon--cri"
+                    data-info-type="cri"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -81,21 +101,61 @@
 
                   <!-- MODAL WINDOW PARA LAS CRIs -->
                   <div class="modal-container modal-container--cri hidden">
-                    <textarea class="modal-input modal-input--cri" placeholder="Ingrese su creencia irracional"></textarea>
+                    <textarea
+                      class="modal-input modal-input--cri"
+                      placeholder="Ingrese su creencia irracional"
+                    ></textarea>
 
                     <div class="btn-container">
                       <button class="modal-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon btn-icon-modal--cri" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="btn-icon btn-icon-modal--cri"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
                         </svg>
                       </button>
                       <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon btn-icon-close-modal--cri" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="btn-icon btn-icon-close-modal--cri"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 9l-7 7-7-7"
+                          />
                         </svg>
                       </button>
                     </div>
+                  </div>
 
+                  <!-- INFO MODAL WINDOW PARA EL CRI -->
+                  <div class="modal-info modal-info--cri hidden">
+                    Para identificar las Cri, buscaremos:
+                    <ul>
+                      <li>
+                        EXIGENCIAS DOGMÁTICAS (Imperativos, órdenes categóricas,
+                        mandamientos)
+                      </li>
+                      <li>
+                        TERRIBILIZACIÓN (Es espantoso, terrible, horrible)
+                      </li>
+                      <li>BAJA TOLERANCIA DE LA FRUSTRACIÓN (No lo soporto)</li>
+                      <li>AUTOHETERO EVALUACIÓN (Soy/es malo, despreciable)</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -105,16 +165,14 @@
                 <h1>D (Disputar las Cri)</h1>
                 <div class="box box--question-answer">
                   <div class="box-item box-item--question">
-                    Preg: lka alsjfd ñlajdfl añlksdjflña
-                  </div>
-                  <div class="box-item box-item--answer">
-                    Resp: lka alsjfd ñlajdfl añlksdjflña
+                    Debata el tema para encontrar lo irracional
                   </div>
                 </div>
                 <div class="bottom-box">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="info-icon info-icon--d"
+                    data-info-type="d"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -146,21 +204,69 @@
 
                   <!-- MODAL WINDOW PARA EL D -->
                   <div class="modal-container modal-container--d hidden">
-                    <textarea class="modal-input modal-input--d" placeholder="Ingrese su Pregunta o Respuesta (hacer que sea automático)"></textarea>
+                    <textarea
+                      class="modal-input modal-input--d"
+                      placeholder="Ingrese su Pregunta o Respuesta (hacer que sea automático)"
+                    ></textarea>
 
                     <div class="btn-container">
                       <button class="modal-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon btn-icon-modal--d" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="btn-icon btn-icon-modal--d"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
                         </svg>
                       </button>
                       <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon btn-icon-close-modal--d" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="btn-icon btn-icon-close-modal--d"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 9l-7 7-7-7"
+                          />
                         </svg>
                       </button>
                     </div>
+                  </div>
 
+                  <!-- INFO MODAL WINDOW PARA EL D -->
+                  <div class="modal-info modal-info--d hidden">
+                    Para disputar, nos preguntaremos:
+                    <ul>
+                      <li>
+                        ¿A dónde voy a llegar si sigo manteniendo esta creencia?
+                        ¿Es <em>útil</em> o <em>contraproducente</em>?
+                      </li>
+                      <li>
+                        ¿Dónde están las pruebas a favor de la existencia de mi
+                        creencia irracional? ¿Es acorde con la realidad?
+                      </li>
+                      <li>
+                        ¿Es <em>lógica</em> mi creencia? ¿Es fruto de mis
+                        preferencias?
+                      </li>
+                      <li>
+                        ¿Es mi problema realmente
+                        <em>espantoso (todo lo malo que puede ser)</em>?
+                      </li>
+                      <li>¿De veras no lo puedo soportar?</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -189,6 +295,7 @@
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="info-icon info-icon--d"
+                data-info-type="c"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -202,6 +309,21 @@
               </svg>
             </div>
 
+            <!-- INFO MODAL WINDOW PARA LAS CONSECUENCIAS -->
+            <div class="modal-info modal-info--c hidden">
+              Entre las emociones negativas malsanas, destacan:
+              <ul>
+                <li>Ansiedad</li>
+                <li>Depresión</li>
+                <li>Rabia</li>
+                <li>Baja tolerancia de la frustración</li>
+                <li>Vergüenza</li>
+                <li>Agravio</li>
+                <li>Celos</li>
+                <li>Culpabilidad</li>
+              </ul>
+            </div>
+
             <!-- CAJAS DEL LADO DERECHO -->
             <div class="inputs inputs-right-side">
               <!-- CREENCIAS RACIONALES -->
@@ -209,7 +331,8 @@
                 <h1>Crr (Creencias racionales)</h1>
                 <div class="box box--rational-beliefs">
                   <div class="box-item box-item--crr">
-                    1-lka alsjfd ñlajdfl añlksdjflña ñlajdfl añlksdjflña ñsdf asñldfjasd ñdfad asdfasdf ñaksdfasd asdlfasdfñ asd adf aadf ñaldfad ñasdf adfa asdfjadf asdfa
+                    Reemplace la creencia irracional actual con una nueva
+                    creencia
                   </div>
                 </div>
 
@@ -217,6 +340,7 @@
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="info-icon info-icon--crr"
+                    data-info-type="crr"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -248,21 +372,66 @@
 
                   <!-- MODAL WINDOW PARA LAS CRRs -->
                   <div class="modal-container modal-container--crr hidden">
-                    <textarea class="modal-input modal-input--crr" placeholder="Ingrese su creencia racional"></textarea>
+                    <textarea
+                      class="modal-input modal-input--crr"
+                      placeholder="Ingrese su creencia racional"
+                    ></textarea>
 
                     <div class="btn-container">
                       <button class="modal-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon btn-icon-modal--crr" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="btn-icon btn-icon-modal--crr"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
                         </svg>
                       </button>
                       <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon btn-icon-close-modal--crr" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="btn-icon btn-icon-close-modal--crr"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 9l-7 7-7-7"
+                          />
                         </svg>
                       </button>
                     </div>
+                  </div>
 
+                  <!-- INFO MODAL WINDOW PARA EL CRR -->
+                  <div class="modal-info modal-info--crr hidden">
+                    Pensar de manera más racional, esforzarnos por:
+                    <ul>
+                      <li>
+                        PREFERENCIAS NO DOGMÁTICAS (Apetencias, querencias,
+                        deseos)
+                      </li>
+                      <li>EVALUAR LA MALDAD (Es malo, desafortunado)</li>
+                      <li>
+                        ALTA TOLERANCIA DE LA FRUSTRACIÓN (No me gusta, pero lo
+                        aguanto)
+                      </li>
+                      <li>
+                        NO EVALUARNOS GLOBALMENTE NI A NOSOTROS MISMOS NI A LOS
+                        DEMÁS (Al igual que los demás, somos seres humanos
+                        falibles)
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -292,6 +461,7 @@
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="info-icon info-icon--e"
+                    data-info-type="e"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -304,8 +474,20 @@
                     />
                   </svg>
 
-                  <button>
-                    <div></div>
+                  <div></div>
+                </div>
+
+                <!-- INFO MODAL WINDOW PARA EL E -->
+                <div class="modal-info modal-info--e hidden">
+                  Entre las emociones negativas saludables, destacan:
+                  <ul>
+                    <li>Decepción</li>
+                    <li>Preocupación</li>
+                    <li>Fastidio</li>
+                    <li>Tristeza</li>
+                    <li>Pesar</li>
+                    <li>Frustración</li>
+                  </ul>
                 </div>
               </div>
             </div>
