@@ -120,12 +120,18 @@ const addCrr = function (newCrr) {
 };
 
 // ================== EVENT LISTENERS ==================
+/* --------------- A ---------------*/
+// AUTOFOCUS WHEN PAGE FINISH LOAD
+window.addEventListener("load", function () {
+  document.querySelector(".a-input").focus();
+});
 
 /* --------------- CRI ---------------*/
 // OPEN MODAL
 btnOpenModalCri.addEventListener("click", function (event) {
   event.preventDefault();
   modalCri.classList.toggle("hidden");
+  document.querySelector(".modal-input--cri").focus();
   textAreaCri.value = "";
 });
 
@@ -156,6 +162,7 @@ criBox.addEventListener("click", function (event) {
 btnOpenModalD.addEventListener("click", function (event) {
   event.preventDefault();
   modalD.classList.toggle("hidden");
+  document.querySelector(".modal-input--d").focus();
   textAreaD.value = "";
 });
 
@@ -178,6 +185,7 @@ btnAddD.addEventListener("click", function (event) {
 btnOpenModalCrr.addEventListener("click", function (event) {
   event.preventDefault();
   modalCrr.classList.toggle("hidden");
+  document.querySelector(".modal-input--crr").focus();
   textAreaCrr.value = "";
 });
 
@@ -201,8 +209,8 @@ const transformHover = function (info) {
   infoModal.classList.toggle("hidden");
 };
 
+// OBS: se usa un event delegation
 mainParentInfo.addEventListener("mouseover", function (event) {
-  // event.preventDefault();
   const hovered = event.target;
   if (!hovered.classList.contains("info-icon")) return;
   transformHover(hovered.dataset.infoType);
