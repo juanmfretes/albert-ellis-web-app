@@ -3,7 +3,6 @@
 /* FIX
 3- Estilizar las fuentes de todos los textos
 4- buscar mejores colores para los text inputs.
-6- Ver por qué no funciona el "focus"
 */
 
 /*
@@ -20,11 +19,6 @@ Texto: rgb(39, 39, 39)
   padding: 0;
   box-sizing: border-box;
 }
-
-/* *:focus {
-  outline: none;
-  box-shadow: inset 0, 0, 0, 10px, rgb(32, 19, 53);
-} */
 
 /* GENERAL */
 html {
@@ -71,9 +65,6 @@ h1 {
 form {
   width: 100%;
   text-align: center;
-}
-
-.input {
 }
 
 .container {
@@ -124,9 +115,8 @@ form {
   height: 70vh;
   border-radius: 6px;
   overflow: scroll;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.2rem;
   background-color: rgb(58, 78, 103);
-  /* border: 1px solid rgb(39, 39, 39); */
 }
 
 .box-item {
@@ -142,7 +132,10 @@ form {
 
 .bottom-box {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 22.9rem;
+
+  position: relative;
 }
 
 /* ICONS */
@@ -253,22 +246,26 @@ footer p {
 
 /* -------------------- ADD ITEMS MODAL -------------------- */
 .modal-container {
-  position: absolute;
   padding: 1rem 1rem 0;
   display: flex;
   flex-direction: column;
   background-color: rgb(160, 160, 160);
   border: 2px solid rgb(39, 39, 39);
   border-radius: 6px;
-  /* opacity: 40%; */
+
+  position: absolute;
+  top: -10.3rem;
+  left: 0;
+  width: 100%;
 }
 
 .modal-input {
-  width: 25rem;
-  height: 12rem;
+  width: 100%;
+  height: 8rem;
   padding: 0.5rem;
   background-color: rgb(58, 78, 103);
   color: rgb(160, 160, 160);
+  margin-bottom: 1rem;
 }
 
 .modal-input::placeholder {
@@ -283,21 +280,6 @@ footer p {
 .modal-btn {
   align-self: flex-end;
   padding: 0.2rem 0 0;
-}
-
-.modal-container--cri {
-  top: 73.3%;
-  left: 0.92%;
-}
-
-.modal-container--d {
-  top: 73.3%;
-  left: 25.1%;
-}
-
-.modal-container--crr {
-  top: 73.3%;
-  left: 50.42%;
 }
 
 /* -------------------- SHOW INFO MODALS -------------------- */
@@ -325,14 +307,10 @@ footer p {
 
 .modal-info--cri {
   bottom: 10%;
-  /* top: 8.15%;
-  left: 13.1%; */
 }
 
 .modal-info--d {
   bottom: 10%;
-  /* top: 8.15%;
-  left: 13.1%; */
 }
 
 .modal-info--c {
@@ -342,8 +320,6 @@ footer p {
 
 .modal-info--crr {
   bottom: 10%;
-  /* transform: translateX(0.16%); */
-  /* left: 13.1%; */
 }
 
 .modal-info--e {

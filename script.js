@@ -13,6 +13,12 @@ FALTA:
 [YA] 10. Estilizar los textos de los inputs
 [YA] 11. Diseñar los "Info Modals"
 [YA] 12. Mostrar ayudas al hacer hover a un "info-icon"
+
+OBSERVACIONES (PARA AGREGAR):
+1. Cambiar el input (D) a un input="text" para que sea mucho más agil cargar las Q/A
+2. Hacer que el punto 1 sea siempre visible  una vez que se hace "click" en el botón (para no estar abriendo cada vez que se quiere agregar una nueva pregunta)
+3. Hacer que no se borre al recargar la página (ver sección 15 Jonas)
+4. Probar agregar un <div> como continer de los "info-icons" para hacer que el hover no sea "intermitente"
 */
 
 // DOM Elements
@@ -109,12 +115,20 @@ const addCri = function (newCri) {
 
 // -------------------- ADD NEW QUESTION/ANSWER --------------------
 const addD = function (newQA) {
+  if (criArray.length === 0) {
+    alert("Introduzca primero un Cri");
+    return;
+  }
   criArray[currCriIndex].d.push(newQA);
   updateUI(currCriIndex);
 };
 
 // -------------------- ADD NEW CRR --------------------
 const addCrr = function (newCrr) {
+  if (criArray.length === 0) {
+    alert("Introduzca primero un Cri");
+    return;
+  }
   criArray[currCriIndex].crr = newCrr;
   updateUI(currCriIndex);
 };
@@ -133,20 +147,42 @@ btnOpenModalCri.addEventListener("click", function (event) {
   modalCri.classList.toggle("hidden");
   document.querySelector(".modal-input--cri").focus();
   textAreaCri.value = "";
+
+  // Reduce height to view the last item in the box
+  criBox.style.setProperty("height", "calc(70vh - 90px)");
+  criBox.style.setProperty("margin-bottom", "10.2rem");
 });
 
-// CLOSE MODAL
+// CLOSE MODAL (2 methods)
 btnCloseModalCri.addEventListener("click", function (event) {
   event.preventDefault();
   modalCri.classList.toggle("hidden");
+
+  // Return box height to its initial value
+  criBox.style.setProperty("height", "70vh");
+  criBox.style.setProperty("margin-bottom", "1.2rem");
 });
 
-// ADD NEW CRI
-btnAddCri.addEventListener("click", function (event) {
-  event.preventDefault();
+// ADD NEW CRI (2 methods)
+const addNewCri = function () {
   const newCri = textAreaCri.value;
   if (newCri !== "") addCri(newCri);
-  modalCri.classList.toggle("hidden");
+  textAreaCri.value = "";
+  document.querySelector(".modal-input--cri").focus();
+};
+
+// 1. Using the "+" btn
+btnAddCri.addEventListener("click", function (event) {
+  event.preventDefault();
+  addNewCri();
+});
+
+// 2. Pressing "enter" in the input field
+textAreaCri.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    addNewCri();
+  }
 });
 
 // SELECT EACH CRI OBJ TO SHOW DATA
@@ -163,44 +199,92 @@ btnOpenModalD.addEventListener("click", function (event) {
   event.preventDefault();
   modalD.classList.toggle("hidden");
   document.querySelector(".modal-input--d").focus();
-  textAreaD.value = "";
+  // textAreaD.value = "";
+
+  // Reduce height to view the last item in the box
+  dBox.style.setProperty("height", "calc(70vh - 90px)");
+  dBox.style.setProperty("margin-bottom", "10.2rem");
 });
 
 // CLOSE MODAL
 btnCloseModalD.addEventListener("click", function (event) {
   event.preventDefault();
   modalD.classList.toggle("hidden");
+
+  // Return box height to its initial value
+  dBox.style.setProperty("height", "70vh");
+  dBox.style.setProperty("margin-bottom", "1.2rem");
 });
 
-// ADD NEW QUESTION/ANSWER
-btnAddD.addEventListener("click", function (event) {
-  event.preventDefault();
+// ADD NEW QUESTION/ANSWER (2 methods)
+const addNewQA = function () {
   const newQA = textAreaD.value;
   if (newQA !== "") addD(newQA);
-  modalD.classList.toggle("hidden");
+  textAreaD.value = "";
+  document.querySelector(".modal-input--d").focus();
+};
+
+// 1. Using the "+" btn
+btnAddD.addEventListener("click", function (event) {
+  event.preventDefault();
+  addNewQA();
 });
 
+// 2. Pressing "enter" in the input field
+textAreaD.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    addNewQA();
+  }
+});
 /* --------------- CRR ---------------*/
 // OPEN MODAL
 btnOpenModalCrr.addEventListener("click", function (event) {
   event.preventDefault();
   modalCrr.classList.toggle("hidden");
   document.querySelector(".modal-input--crr").focus();
-  textAreaCrr.value = "";
+
+  // Reduce height to view the last item in the box
+  crrBox.style.setProperty("height", "calc(70vh - 90px)");
+  crrBox.style.setProperty("margin-bottom", "10.2rem");
 });
 
 // CLOSE MODAL
+const closeModalCrr = function () {
+  modalCrr.classList.toggle("hidden");
+
+  // Return box height to its initial value
+  crrBox.style.setProperty("height", "70vh");
+  crrBox.style.setProperty("margin-bottom", "1.2rem");
+};
+
 btnCloseModalCrr.addEventListener("click", function (event) {
   event.preventDefault();
-  modalCrr.classList.toggle("hidden");
+  closeModalCrr();
 });
 
-// ADD NEW CRR
-btnAddCrr.addEventListener("click", function (event) {
-  event.preventDefault();
+// ADD NEW CRR OR REPLACE CURRENT CRR (2 methods)
+const addNewCrr = function () {
   const newCrr = textAreaCrr.value;
   if (newCrr !== "") addCrr(newCrr);
+  textAreaCrr.value = "";
+  document.querySelector(".modal-input--crr");
   modalCrr.classList.toggle("hidden");
+  closeModalCrr();
+};
+
+// 1. Using the "+" btn
+btnAddCrr.addEventListener("click", function (event) {
+  event.preventDefault();
+  addNewCrr();
+});
+
+// 2. Pressing "enter" in the input field
+textAreaCrr.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    addNewCrr();
+  }
 });
 
 /* --------------- SHOW INFO WHILE HOVER ---------------*/
