@@ -301,29 +301,23 @@ footer p {
 
 .modal-info--a {
   max-width: 48rem;
-  top: 7.05%;
-  left: 13%;
+  top: 8.1%;
+  left: 14%;
 }
 
-.modal-info--cri {
-  bottom: 10%;
-}
-
-.modal-info--d {
-  bottom: 10%;
+.modal-info--cri,
+.modal-info--d,
+.modal-info--crr {
+  bottom: 125%;
 }
 
 .modal-info--c {
-  top: 9.2%;
-  right: 2.65%;
-}
-
-.modal-info--crr {
-  bottom: 10%;
+  top: 0.6%;
+  right: 4%;
 }
 
 .modal-info--e {
-  bottom: 10%;
+  bottom: 8.75%;
   right: 1.58%;
 }
 

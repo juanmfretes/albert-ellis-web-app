@@ -294,13 +294,18 @@ const transformHover = function (info) {
 };
 
 // OBS: se usa un event delegation
-mainParentInfo.addEventListener("mouseover", function (event) {
-  const hovered = event.target;
-  if (!hovered.classList.contains("info-icon")) return;
-  transformHover(hovered.dataset.infoType);
-});
+// mainParentInfo.addEventListener("click", function (event) {
+//   event.preventDefault();
+//   const hovered = event.target;
+//   if (
+//     !hovered.classList.contains("info-icon") ||
+//     !hovered.classList.contains("info-btn")
+//   )
+//     return;
+//   transformHover(hovered.dataset.infoType);
+// });
 
-mainParentInfo.addEventListener("mouseout", function (event) {
+mainParentInfo.addEventListener("click", function (event) {
   const hovered = event.target;
   if (!hovered.classList.contains("info-icon")) return;
   transformHover(hovered.dataset.infoType);
